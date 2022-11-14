@@ -1,7 +1,6 @@
 {
   "name": "pet-adoption",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
@@ -27,5 +26,14 @@
   },
   "browserslist": [
     "last 2 Chrome versions"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcelSF/pet-adoption.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcelSF/pet-adoption/issues"
+  },
+  "homepage": "https://github.com/MarcelSF/pet-adoption#readme",
+  "description": ""
 }
