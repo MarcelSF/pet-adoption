@@ -13840,7 +13840,7 @@ module.exports = require("./cjs/react-dom.development.js");
         hookTypesDev = null;
         hookTypesUpdateIndexDev = -1;
         didScheduleRenderPhaseUpdate = false;
-        if (didRenderTooFewHooks) throw Error("Rendered fewer hooks than expected. This may be caused by an accidental early return statement.");
+        if (!!didRenderTooFewHooks) throw Error("Rendered fewer hooks than expected. This may be caused by an accidental early return statement.");
         return children;
     }
     function bailoutHooks(current, workInProgress, lanes) {
@@ -21943,7 +21943,7 @@ module.exports = require("./cjs/react.development.js");
  * Clone and return a new ReactElement using element as the starting point.
  * See https://reactjs.org/docs/react-api.html#cloneelement
  */ function cloneElement(element, config, children) {
-        if (element === null || element === undefined) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
+        if (!!(element === null || element === undefined)) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
         var propName; // Original props are copied
         var props = _assign({}, element.props); // Reserved names are extracted
         var key = element.key;
