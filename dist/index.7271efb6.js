@@ -13840,7 +13840,7 @@ module.exports = require("./cjs/react-dom.development.js");
         hookTypesDev = null;
         hookTypesUpdateIndexDev = -1;
         didScheduleRenderPhaseUpdate = false;
-        if (!!didRenderTooFewHooks) throw Error("Rendered fewer hooks than expected. This may be caused by an accidental early return statement.");
+        if (didRenderTooFewHooks) throw Error("Rendered fewer hooks than expected. This may be caused by an accidental early return statement.");
         return children;
     }
     function bailoutHooks(current, workInProgress, lanes) {
@@ -21943,7 +21943,7 @@ module.exports = require("./cjs/react.development.js");
  * Clone and return a new ReactElement using element as the starting point.
  * See https://reactjs.org/docs/react-api.html#cloneelement
  */ function cloneElement(element, config, children) {
-        if (!!(element === null || element === undefined)) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
+        if (element === null || element === undefined) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
         var propName; // Original props are copied
         var props = _assign({}, element.props); // Reserved names are extracted
         var key = element.key;
@@ -24683,6 +24683,9 @@ const SearchParams = ()=>{
     _s();
     // const location = "Munich, Bayern, Germany";
     const [location, setLocation] = (0, _react.useState)("");
+    {
+        const [animal, setAnimal] = (0, _react.useState)("");
+    }
     // DO NOT HAVE CONDITIONAL HOOKS!
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "search-params",
@@ -24694,36 +24697,35 @@ const SearchParams = ()=>{
                         "Location",
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                             id: "location",
-                            value: location,
-                            placeholder: "location",
-                            onChange: (e)=>setLocation(e.target.value)
+                            // value={location}
+                            placeholder: "location"
                         }, void 0, false, {
                             fileName: "src/SearchParams.js",
-                            lineNumber: 14,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/SearchParams.js",
-                    lineNumber: 12,
+                    lineNumber: 16,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                     children: "Submit"
                 }, void 0, false, {
                     fileName: "src/SearchParams.js",
-                    lineNumber: 17,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/SearchParams.js",
-            lineNumber: 11,
+            lineNumber: 15,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/SearchParams.js",
-        lineNumber: 10,
+        lineNumber: 14,
         columnNumber: 5
     }, undefined);
 };
